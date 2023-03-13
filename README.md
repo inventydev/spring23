@@ -1,1 +1,1 @@
-# spring23
+# Spring boot demo app
