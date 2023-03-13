@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/htmx.org@1.8.6"></script>
+</head>
+<body>
+  <p th:text="#{hello}">Hello!</p>
+  <div sec:authorize="isAuthenticated()">
+      This content is only shown to authenticated users.
+  </div>
+  <div sec:authorize="hasRole('ROLE_ADMIN')">
+      This content is only shown to administrators.
+  </div>
+  <div sec:authorize="hasRole('ROLE_USER')">
+      This content is only shown to users.
+  </div>
+
+  Logged user: <span sec:authentication="name">Bob</span>
+  Roles: <span sec:authentication="principal.authorities">[ROLE_USER, ROLE_ADMIN]</span>
+  <div id="result-div">Date:</div>
+  <form method="POST">
+      <input
+              type="hidden"
+              th:name="${_csrf.parameterName}"
+              th:value="${_csrf.token}" />
+      <!-- have a button POST a click via AJAX -->
+      <button hx-post="/clicked" hx-swap="innerHTML" hx-target="#result-div">
+          Click Me
+      </button>
+  </form>
+</body>
+</html>
