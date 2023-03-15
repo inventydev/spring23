@@ -1,4 +1,4 @@
-package spring23.com.springwebhtmx;
+package com.spring23.springwebhtmx;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

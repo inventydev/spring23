@@ -1,4 +1,4 @@
-package spring23.com.springwebhtmx;
+package com.spring23.springwebhtmx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

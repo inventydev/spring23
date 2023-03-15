@@ -27,11 +27,11 @@ tasks.named('test') {
 }
 
 springBoot {
-	mainClass = 'com.spring23.com.demo.DemoApplication'
+	mainClass = 'com.spring23.springwebhtmx.SpringWebHtmxApplication'
 }
 
 jar {
 	manifest {
-		attributes 'Main-Class': 'com.spring23.com.demo.DemoApplication'
+		attributes 'Main-Class': 'com.spring23.springwebhtmx.SpringWebHtmxApplication'
 	}
 }
