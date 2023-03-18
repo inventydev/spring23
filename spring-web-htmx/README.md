@@ -17,11 +17,10 @@ Java version: 17
 
 ## Install Java using sdk manager 
 
-Use SDKMAN tool to install different versions on Java and manage default version.
+Use SDKMAN tool to install different versions on Java and manage default version.   
+Install instructions: [https://sdkman.io/install](https://sdkman.io/install)  
 
-Install instructions: [https://sdkman.io/install](https://sdkman.io/install)
-
-List available java versions
+List available java versions  
 ```
 sdk list java
 ``` 
@@ -39,9 +38,9 @@ sdk install java 17.0.5-tem
 # Docker
 
 ## Docker file
-Use java version 17 temurin
-Copy the package .jar file as app.jar
-Run `java -jar /app.jar`
+Use java version 17 temurin  
+Copy the package .jar file as app.jar  
+Run `java -jar /app.jar`  
 
 ```
 FROM eclipse-temurin:17-jdk-alpine
@@ -51,7 +50,7 @@ ENTRYPOINT ["java","-jar","/app.jar"]
 ```
 
 ## Docker image
-Build docker image
+Build docker image  
 ```
 docker build -t spring23/spring-web-htmx .
 ```
