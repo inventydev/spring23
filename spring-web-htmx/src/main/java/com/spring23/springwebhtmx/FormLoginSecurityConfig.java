@@ -1,7 +1,9 @@
 package com.spring23.springwebhtmx;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -13,6 +15,9 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 @EnableWebSecurity
 public class FormLoginSecurityConfig {
+
+    @Autowired
+    private Environment env;
 
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
@@ -35,14 +40,14 @@ public class FormLoginSecurityConfig {
     @Bean
     public UserDetailsService users() {
         UserDetails user = User.builder()
-                .username("user")
-                .password("{bcrypt}$2a$10$ob3fWPnn2dBvNU6ht3isx.elkJ9Zs5Gct/LwRF7DR6gJNvjIZsQIq")
+                .username(env.getProperty("spring.security.user.name"))
+                .password(env.getProperty("spring.security.user.password"))
                 .roles("USER")
 
                 .build();
         UserDetails admin = User.builder()
-                .username("admin")
-                .password("{bcrypt}$2a$10$ob3fWPnn2dBvNU6ht3isx.elkJ9Zs5Gct/LwRF7DR6gJNvjIZsQIq")
+                .username(env.getProperty("spring.security.admin.name"))
+                .password(env.getProperty("spring.security.admin.password"))
                 .roles("USER", "ADMIN")
                 .build();
         return new InMemoryUserDetailsManager(user, admin);

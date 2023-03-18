@@ -61,4 +61,24 @@ Run docker container using docker image
 docker run -p 8080:8080 spring23/spring-web-htmx
 ```
 
+# Env variables
+Encode your password using [Spring Boot CLI](https://docs.spring.io/spring-boot/docs/current/reference/html/cli.html)
+```
+spring encodepassword password
+{bcrypt}$2a$10$X5wFBtLrL/kHcmrOGGTrGufsBX8CJ0WpQpF3pgeuxBB/H73BK1DW6
+```
+Set environment variables
+```
+export ADMIN_PASSWORD='{bcrypt}$2a$10$X5wFBtLrL/kHcmrOGGTrGufsBX8CJ0WpQpF3pgeuxBB/H73BK1DW6'
+export USER_PASSWORD='{bcrypt}$2a$10$X5wFBtLrL/kHcmrOGGTrGufsBX8CJ0WpQpF3pgeuxBB/H73BK1DW6'
+```
 
+# On [railway.app](https://railway.app?referralCode=hZtZGt) add env variables to the deployment
+Use the values generated with the Spring Boot CLI
+
+VARIABLE_NAME: ADMIN_PASSWORD
+VALUE: {bcrypt}$2a$10$X5wFBtLrL/kHcmrOGGTrGufsBX8CJ0WpQpF3pgeuxBB/H73BK1DW6
+
+
+VARIABLE_NAME: USER_PASSWORD
+VALUE: {bcrypt}$2a$10$X5wFBtLrL/kHcmrOGGTrGufsBX8CJ0WpQpF3pgeuxBB/H73BK1DW6
