@@ -16,7 +16,9 @@ java -jar ./build/libs/spring-web-htmx-0.0.1-SNAPSHOT.jar
 Java version: 17
 
 ## Install Java using sdk manager 
-Use SDKMAN tool to install different versions on Java and manage default version
+
+Use SDKMAN tool to install different versions on Java and manage default version.
+
 Install instructions: [https://sdkman.io/install](https://sdkman.io/install)
 
 List available java versions
