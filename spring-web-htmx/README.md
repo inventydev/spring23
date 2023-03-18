@@ -16,7 +16,7 @@ java -jar ./build/libs/spring-web-htmx-0.0.1-SNAPSHOT.jar
 Java version: 17
 
 ## Install Java using sdk manager 
-Use SDKMAN tool to install different versions on Java and manage defaul version
+Use SDKMAN tool to install different versions on Java and manage default version
 Install instructions: [https://sdkman.io/install](https://sdkman.io/install)
 
 List available java versions
@@ -30,8 +30,7 @@ Install java 17
 sdk install java 17.0.5-tem
 ```
 
-## Install Java from packages
-Or use the instructions on temurin page:
+## Install Java from the temurin page:
 [https://adoptium.net/temurin/releases/](https://adoptium.net/temurin/releases/) 
 
 
