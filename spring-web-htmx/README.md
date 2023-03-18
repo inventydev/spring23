@@ -1,4 +1,4 @@
-# Spring boot 3 app with tymeleaf templates and htmx
+# Spring boot 3 app with thymeleaf templates and htmx
 
 ## Build and generate the jar file
 
@@ -62,3 +62,8 @@ docker run -p 8080:8080 spring23/spring-web-htmx
 ```
 
 
+# Thymeleaf
+[https://www.thymeleaf.org/](https://www.thymeleaf.org/)
+
+# HTMX
+[https://htmx.org/docs/](https://htmx.org/docs/)
